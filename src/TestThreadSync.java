@@ -24,6 +24,8 @@ class Timer{
     private static int num = 0;
     public void add(String name) {
         synchronized (this) {//如果没有这个代码行，输出值都是:第2个使用timer的线程
+            // t1你是第1个使用timer的线程
+            // t2你是第2个使用timer的线程
             num++;
             try {
                 Thread.sleep(1); //睡一秒 ，让线程2进入
